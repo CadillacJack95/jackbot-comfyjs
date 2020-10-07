@@ -35,11 +35,21 @@ async function changeLightColor(requestedColor) {
       return lightID.map((light) =>
         api.lights.setLightState(light, colorState)
       );
+    } else if (requestedColor.startsWith("#")) {
+      RGB = hexRgb(requestedColor);
+      const colorState = new LightState()
+        .on(true)
+        .brightness(100)
+        .rgb(RGB.red, RGB.green, RGB.blue);
+
+      return lightID.map((light) =>
+        api.lights.setLightState(light, colorState)
+      );
+    } else {
+      ComfyJS.Say(
+        `${requestedColor} does not exist. For a list of colors you can head to this link: https://codepen.io/meodai/full/VMpNdQ`
+      );
     }
-  } else {
-    ComfyJS.Say(
-      `${requestedColor} does not exist. For a list of colors you can head to this link: https://codepen.io/meodai/full/VMpNdQ`
-    );
   }
 }
 
