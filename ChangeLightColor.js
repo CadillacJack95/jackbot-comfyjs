@@ -7,9 +7,8 @@ const hexRgb = require("hex-rgb");
 const lightConfig = require("./lightsConfig");
 
 const LightState = v3.lightStates.LightState;
-
+const lightID = [5, 6, 7, 8, 10, 12, 13];
 async function changeLightColor(requestedColor) {
-  const lightID = [5, 6, 7, 8, 10, 12, 13];
   const offState = new LightState().off(true);
   let foundColor;
   let RGB;
@@ -44,6 +43,27 @@ async function changeLightColor(requestedColor) {
   }
 }
 
+async function changeLightOnevent() {
+  const red = [255, 0, 0];
+  const green = [0, 255, 0];
+  const blue = [0, 0, 255];
+
+  const colors = [red, green, blue];
+
+  const api = await lightConfig.ConnectToHueBridge();
+
+  for (let i = 0; i < 3; i++) {
+    const eventState = new LightState()
+      .on(true)
+      .brightness(100)
+      .alert("select")
+      .rgb(colors[i]);
+
+    lightID.map((light) => api.lights.setLightState(light, eventState));
+  }
+}
+
 module.exports = {
   changeLightColor,
+  changeLightOnevent,
 };

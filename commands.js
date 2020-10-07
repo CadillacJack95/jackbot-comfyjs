@@ -30,6 +30,10 @@ function Light(message) {
   LightFunctions.changeLightColor(message);
 }
 
+function ChangeLightOnEvent() {
+  LightFunctions.changeLightOnevent();
+}
+
 module.exports = {
   SendHelp,
   Discord,
@@ -37,4 +41,5 @@ module.exports = {
   Github,
   ShoutOut,
   Light,
+  ChangeLightOnEvent,
 };
