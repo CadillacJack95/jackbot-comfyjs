@@ -1,0 +1,19 @@
+{
+  "name": "jackbot-comfyjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "color-name-list": "^7.9.0",
+    "comfy.js": "^1.1.3",
+    "dotenv": "^8.2.0",
+    "hex-rgb": "^4.2.0",
+    "node-hue-api": "^4.0.9",
+    "nodemon": "^2.0.4"
+  }
+}
