@@ -27,6 +27,9 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command === "light") {
     commands.Light(message);
   }
+  if (command === "attention") {
+    commands.GetMyAttention(flags);
+  }
 };
 
 ComfyJS.onCheer = (user, message, bits, flags, extra) => {

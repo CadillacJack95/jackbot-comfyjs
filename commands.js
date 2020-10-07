@@ -1,6 +1,6 @@
 require("dotenv").config();
 const ComfyJS = require("comfy.js");
-const LightFunctions = require("./ChangeLightColor");
+const LightFunctions = require("./Lights");
 
 function SendHelp() {
   ComfyJS.Say(
@@ -34,6 +34,14 @@ function ChangeLightOnEvent() {
   LightFunctions.changeLightOnevent();
 }
 
+function GetMyAttention(flags) {
+  const { broadcaster, subscriber, mod, founder, vip } = flags;
+
+  if (mod || subscriber || founder || vip) {
+    LightFunctions.getMyAttention();
+  }
+}
+
 module.exports = {
   SendHelp,
   Discord,
@@ -42,4 +50,5 @@ module.exports = {
   ShoutOut,
   Light,
   ChangeLightOnEvent,
+  GetMyAttention,
 };

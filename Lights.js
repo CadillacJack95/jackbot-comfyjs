@@ -73,7 +73,19 @@ async function changeLightOnevent() {
   }
 }
 
+async function getMyAttention() {
+  const api = await lightConfig.ConnectToHueBridge();
+  const alertState = new LightState()
+    .on(true)
+    .brightness(100)
+    .alert("select")
+    .rgb(255, 0, 0);
+
+  return lightID.map((light) => api.lights.setLightState(light, alertState));
+}
+
 module.exports = {
   changeLightColor,
   changeLightOnevent,
+  getMyAttention,
 };
