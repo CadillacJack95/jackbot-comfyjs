@@ -25,6 +25,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://baldbeardedbuilder.com/"><img src="https://avatars2.githubusercontent.com/u/1228996?v=4" width="100px;" alt=""/><br /><sub><b>Michael Jolley</b></sub></a><br /><a href="#ideas-michaeljolley" title="Ideas, Planning, & Feedback">🤔</a></td>
+
+    <td align="center"><a href="http://negue.github.io"><img src="https://avatars3.githubusercontent.com/u/842273?v=4" width="100px;" alt=""/><br /><sub><b>negue</b></sub></a><br /><a href="#ideas-negue" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="http://twitch.tv/whitep4nth3r"><img src="https://avatars0.githubusercontent.com/u/52798353?v=4" width="100px;" alt=""/><br /><sub><b>Salma @whitep4nth3r</b></sub></a><br /><a href="#ideas-whitep4nth3r" title="Ideas, Planning, & Feedback">🤔</a></td>
   </tr>
 </table>
