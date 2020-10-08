@@ -5,10 +5,11 @@ const namedColors = require("color-name-list");
 const ComfyJS = require("comfy.js");
 const hexRgb = require("hex-rgb");
 const lightConfig = require("./lightsConfig");
+const customColors = require("./customcolors.json");
 
 const LightState = v3.lightStates.LightState;
 const lightID = [5, 6, 7, 8, 10, 12, 13];
-async function changeLightColor(requestedColor) {
+async function changeLightColor(requestedColor, username) {
   const offState = new LightState().off(true);
   let foundColor;
   let RGB;
@@ -44,6 +45,20 @@ async function changeLightColor(requestedColor) {
 
       return lightID.map((light) =>
         api.lights.setLightState(light, colorState)
+      );
+    } else if (
+      requestedColor.toLowerCase() === username.toLowerCase() ||
+      requestedColor.toLowerCase() === "me"
+    ) {
+      RGB = hexRgb(customColors[`${username.toLowerCase()}`]);
+
+      const customColorState = new LightState()
+        .on(true)
+        .brightness(100)
+        .rgb(RGB.red, RGB.green, RGB.blue);
+
+      return lightID.map((light) =>
+        api.lights.setLightState(light, customColorState)
       );
     } else {
       ComfyJS.Say(

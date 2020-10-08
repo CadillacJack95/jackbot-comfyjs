@@ -1,10 +1,3 @@
-[
-    {
-        "username": "CadillacJack1",
-        "hexCode": "#123456"
-    },
-    {
-        "username": "jackbot11",
-        "hexCode": "#123456"
-    }
-]
+{
+    "cadillacjack1": "#000000"
+}

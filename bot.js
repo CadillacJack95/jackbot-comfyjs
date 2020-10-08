@@ -25,7 +25,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   }
 
   if (command === "light") {
-    commands.Light(message);
+    commands.Light(message, user);
   }
   if (command === "attention") {
     commands.GetMyAttention(flags);

@@ -27,8 +27,8 @@ function ShoutOut(message) {
   );
 }
 
-function Light(message) {
-  LightFunctions.changeLightColor(message);
+function Light(message, username) {
+  LightFunctions.changeLightColor(message, username);
 }
 
 function ChangeLightOnEvent() {
@@ -44,53 +44,22 @@ function GetMyAttention(flags) {
 }
 
 function AddNewCustomColor(username, hexCode) {
-  let newCustomColor = [{ username: username, hexCode: hexCode }];
-
   fs.readFile(
     "./customcolors.json",
     { encoding: "utf8", flag: "a+" },
     (err, data) => {
       if (err) throw err;
 
-      if (!data) {
-        fs.writeFileSync(
-          "./customcolors.json",
-          JSON.stringify(newCustomColor),
-          (err, newCustomColor) => {
-            if (err) throw err;
-            console.log("file saved");
-          }
-        );
-      }
-      if (data) {
-        const jsonData = JSON.parse(data);
-        let indexOfExisting;
-        let foundExisting = false;
+      const customColors = data ? JSON.parse(data) : {};
 
-        for (var i = 0; i < jsonData.length; i++) {
-          if (jsonData[i].username === username) {
-            indexOfExisting = i;
-            foundExisting = true;
-          }
+      customColors[username.toLowerCase()] = hexCode;
+      fs.writeFileSync(
+        "./customcolors.json",
+        JSON.stringify(customColors, null, 4),
+        (err) => {
+          if (err) throw err;
         }
-
-        if (foundExisting) {
-          jsonData[indexOfExisting].username = username;
-          jsonData[indexOfExisting].hexCode = hexCode;
-          console.log("username exists");
-        } else {
-          jsonData.push({ username, hexCode });
-          console.log("username does not exist");
-        }
-
-        fs.writeFileSync(
-          "./customcolors.json",
-          JSON.stringify(jsonData, null, 4),
-          (err) => {
-            if (err) throw err;
-          }
-        );
-      }
+      );
     }
   );
 }
