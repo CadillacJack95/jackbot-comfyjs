@@ -19,17 +19,24 @@
       "name": "negue",
       "avatar_url": "https://avatars3.githubusercontent.com/u/842273?v=4",
       "profile": "http://negue.github.io",
-      "contributions":[
+      "contributions": [
         "ideas"
       ]
-     },
-     {
-
+    },
+    {
       "login": "whitep4nth3r",
       "name": "Salma @whitep4nth3r",
       "avatar_url": "https://avatars0.githubusercontent.com/u/52798353?v=4",
       "profile": "http://twitch.tv/whitep4nth3r",
-
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "SurlyDev",
+      "name": "SurlyDev",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/880671?v=4",
+      "profile": "https://github.com/surlydev",
       "contributions": [
         "ideas"
       ]
