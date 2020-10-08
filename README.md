@@ -13,6 +13,7 @@ A ComfyJS version of the Twitch Bot Jackbot for CadillacJack1's Channel
 - !github -> Displays my github profile link
 - !light username || me || hexCode || colorName -> Sets the lights in my room to that color
   !light username || me requires channel point redemption to store the hexCode
+- !attention -> Used by VIPs, Mods, or Subscribers to flash my lights red to get my attention
   
 
 ## Contributors ✨
