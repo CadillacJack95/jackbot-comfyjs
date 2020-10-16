@@ -10,7 +10,7 @@ function SendHelp() {
 }
 
 function Discord() {
-  ComfyJS.Say("https://discord.gg/2DbqPHq");
+  ComfyJS.Say("https://discord.gg/NzawkjG");
 }
 
 function Twitter() {
